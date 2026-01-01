@@ -17,7 +17,12 @@
         right: 35px;
         cursor: pointer;
     }
-
+    .done{
+        position: absolute;
+        top: 3px;
+        right: 65px;
+        cursor: pointer;
+    }
     input {
         width: 100%;
         border-radius: 8px;

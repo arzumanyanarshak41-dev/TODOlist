@@ -8,7 +8,7 @@ export const ToDos = ({ data, setdata}) => {
             {data.map((el, index) => (
                 <Oneof
                     key={index}
-                    text={el}
+                    text={el.info}
                     data={data}
                     ind={index}
                     setdata={setdata} 

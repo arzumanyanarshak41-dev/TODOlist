@@ -1,0 +1,32 @@
+.oneofbox {
+    display: flex;
+    width: 100%;
+    gap: 5px;
+    position: relative;
+
+    .delete {
+        position: absolute;
+        top: 3px;
+        right: 5px;
+        cursor: pointer;
+    }
+
+    .edit {
+        position: absolute;
+        top: 3px;
+        right: 35px;
+        cursor: pointer;
+    }
+
+    input {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid gray;
+        background-color: rgba(128, 128, 128, 0.437);
+        padding: 5px;
+    }
+
+    img {
+        width: 20px;
+    }
+}

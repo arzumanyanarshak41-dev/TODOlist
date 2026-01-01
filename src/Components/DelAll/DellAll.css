@@ -1,0 +1,18 @@
+.allDelBox{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        button{
+            background-color: red;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+        }
+        p{
+            color: gray;
+            user-select: none;
+        }
+    }

@@ -3,6 +3,14 @@
     width: 100%;
     gap: 5px;
     position: relative;
+    transition: all 0.3s;
+
+    .todoIsDone {
+        text-decoration: line-through;
+        color: black;
+        border: 1px solid rgb(172, 255, 47);
+        background-color: rgba(172, 255, 47, 0.565);
+    }
 
     .delete {
         position: absolute;
@@ -17,29 +25,35 @@
         right: 35px;
         cursor: pointer;
     }
-    .done{
+
+    .done {
         position: absolute;
         top: 3px;
         right: 65px;
         cursor: pointer;
     }
+
     img {
         width: 20px;
     }
 }
-.todoIsDone{
-    text-decoration: line-through;
-    background-color: rgb(128, 128, 128);
-    color: white;
+
+.oneofbox:hover {
+    transform: scale(1.1);
 }
+
+
+
 .inpu {
-        width: 100%;
-        border-radius: 8px;
-        border: 1px solid gray;
-        background-color: rgba(128, 128, 128, 0.437);
-        padding: 5px;
-    }
-.onedit{
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid gray;
+    background-color: rgba(128, 128, 128, 0.437);
+    padding: 5px;
+}
+
+
+.onedit {
     background-color: rgba(137, 43, 226, 0.417);
     color: white;
 }

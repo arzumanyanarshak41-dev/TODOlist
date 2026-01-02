@@ -33,7 +33,7 @@ export const Oneof = ({ text, data, ind, setdata }) => {
         setdata(newData)
     }
     return (
-        <form className="oneofbox" onSubmit={saveEdit}>
+        <form className={data[ind].isdone?"oneofbox donecolor":"oneofbox"} onSubmit={saveEdit}>
             <input type="text" value={value}
                 id={`todoInp${ind}`}
                 readOnly={isRead}

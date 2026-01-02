@@ -57,4 +57,5 @@
 .onedit {
     background-color: rgba(137, 43, 226, 0.417);
     color: white;
+    border: 1.5px solid rgb(239, 46, 46);
 }

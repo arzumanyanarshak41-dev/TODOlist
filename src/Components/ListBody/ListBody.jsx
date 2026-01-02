@@ -7,7 +7,8 @@ export const ListBody = () => {
     const [info, setInfo] = useState("")
     function setOnData(e) {
         e.preventDefault()
-        if (info.trim() === "") return
+        if (info.trim() === "" || data.some(item => item.info === info)) return
+        
         setdata([
             ...data,
             {

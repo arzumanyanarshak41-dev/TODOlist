@@ -23,7 +23,7 @@ export const ListBody = () => {
             <div className="ListBody">
                 <h1>TODO list</h1>
                 <form className="inpbox" onSubmit={setOnData}>
-                    <input type="text" className="adder" onChange={(e) => setInfo(e.target.value)} value={info}/>
+                    <input type="text" className="adder" onChange={(e) => setInfo(e.target.value)} value={info} />
                     <button className="addbut">+</button>
                 </form>
                 <ToDos data={data} setdata={setdata} />

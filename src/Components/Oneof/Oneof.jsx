@@ -2,39 +2,46 @@ import './Oneof.css'
 import { useState } from 'react'
 export const Oneof = ({ text, data, ind, setdata }) => {
     const [isRead, setIsRead] = useState(true)
-    const [value, setValue] = useState(text) 
+    const [value, setValue] = useState(text)
     function edit(e) {
-        if(isRead==true){
+        if (isRead == true) {
             setIsRead(false)
-        }else{
+        } else if (value.trim() !== "") {
             setIsRead(true)
         }
-    }
-    function editdone(e) {
-        if (e.key == "Enter") {
-            setIsRead(true)
-            const newData = [...data]
-            newData[ind] = value
-            setdata(newData)
-        }
+        const newData = [...data]
+        newData[ind].info = value
+        setdata(newData)
     }
     function deleter(e) {
         const newData = [...data]
         newData.splice(ind, 1)
         setdata(newData)
     }
-    function isdone(){
-        
+    function isdone(e) {
+        const newData = [...data]
+        newData[ind] = { ...newData[ind] }
+        newData[ind].isdone = !newData[ind].isdone
+        setdata(newData)
+    }
+    function saveEdit(e) {
+        e.preventDefault()
+        if (!value.trim()) return
+        setIsRead(true)
+        const newData = [...data]
+        newData[ind].info = value 
+        setdata(newData)
     }
     return (
-        <div className="oneofbox">
+        <form className="oneofbox" onSubmit={saveEdit}>
             <input type="text" value={value}
-                disabled={isRead}
-                onKeyDown={(e) => editdone(e)}
-                onChange={(e) => setValue(e.target.value)} /> {/* //??????????????????????? */}
-                <img src="https://cdn-icons-png.flaticon.com/512/6459/6459980.png" className="done" />
-            <img src="https://icons.veryicon.com/png/o/miscellaneous/linear-small-icon/edit-246.png" className="edit" onClick={(e) => { edit(e) }} />
-            <img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" className="delete" onClick={(e) => { deleter(e) }} />
-        </div>
+                id={`todoInp${ind}`}
+                readOnly={isRead}
+                className={data[ind].isdone ? "todoIsDone inpu" : !isRead ? "onedit inpu" : "inpu"}
+                onChange={(e) => setValue(e.target.value)} />
+            <img src="https://cdn-icons-png.flaticon.com/512/6459/6459980.png" onClick={isdone} className='done' />
+            <img src="https://icons.veryicon.com/png/o/miscellaneous/linear-small-icon/edit-246.png" onClick={edit} className="edit" />
+            <img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" onClick={deleter} className="delete" />
+        </form>
     )
 }

@@ -23,15 +23,23 @@
         right: 65px;
         cursor: pointer;
     }
-    input {
+    img {
+        width: 20px;
+    }
+}
+.todoIsDone{
+    text-decoration: line-through;
+    background-color: rgb(128, 128, 128);
+    color: white;
+}
+.inpu {
         width: 100%;
         border-radius: 8px;
         border: 1px solid gray;
         background-color: rgba(128, 128, 128, 0.437);
         padding: 5px;
     }
-
-    img {
-        width: 20px;
-    }
+.onedit{
+    background-color: rgba(137, 43, 226, 0.417);
+    color: white;
 }
